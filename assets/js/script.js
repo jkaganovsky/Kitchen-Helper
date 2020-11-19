@@ -10,4 +10,18 @@ function getRecipesbyIngredients(){
     });
 
 }
-getRecipesbyIngredients();
+// getRecipesbyIngredients();
+
+function getNutrition(){
+
+    var secondQueryURL = "https://api.edamam.com/api/nutrition-data?app_id=17b937a5&app_key=02f27b66f18bc4bf93156f026eabe8f8&ingr=1%20large%20apple"
+    $.ajax({
+        url:secondQueryURL,
+        method:"GET"
+
+    }).then(function(response){
+        console.log(response);
+    });
+}
+
+getNutrition();
