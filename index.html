@@ -37,27 +37,20 @@
 
     <!-- https://bulma.io/documentation/columns/ -->
 
-<div class="columns">
-    <div class="column is-one-fifth ml-2">
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-                <article class="tile is-child box">
-                    <p>Add your ingredients here</p>
-                        <div class="control">
-                            <input type="search" placeholder="Text input..."/>
-                        </div>
-                </article>    
-            </div>
-        </div>
-    </div>
-</div>
-
+    <div class="columns">
 
         <div class="column is-one-quarter ml-2">
-
-
-
-        
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+                        <p>Add your ingredients here</p>
+                        <div class="control">
+                            <input type="search" placeholder="Text input..." />
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
 
         <div class="column is-three-quarters mr-2">
 
@@ -143,38 +136,59 @@
 
             <!-- End of recipe tiles -->
 
+
+            <!-- Start of modal -->
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Recipe Name</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
                     <section class="modal-card-body">
                         <!-- Content ... -->
                         <div class="modal-content">
                             <p class="image is-2by1">
-                            <img src="https://bulma.io/images/placeholders/640x320.png" alt="">
+                                <img src="https://bulma.io/images/placeholders/640x320.png" alt="">
                             </p>
 
-                        <div class="content">
-                            <span>Recipe Instructions:</span>
+                            <div class="content">
+                                <span>Recipe Instructions:</span>
 
-                            <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
-                            Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.
-                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt.
-                            Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat,
-                            accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nulla quis lorem ut libero malesuada feugiat.
-                            </p>
+                                <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                                    Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.
+                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor
+                                    accumsan tincidunt.
+                                    Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum
+                                    porta. Curabitur arcu erat,
+                                    accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.
+                                    Nulla quis lorem ut libero malesuada feugiat.
+                                </p>
 
-
-
-
-
-
-                            <p>
-                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet
-                            quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante ipsum primis in faucibus orci
-                            luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                            Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit,
-                            eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
-                            </p>
+                                <p>
+                                    Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit
+                                    amet
+                                    quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus.
+                                    Lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante
+                                    ipsum primis in faucibus orci
+                                    luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
+                                    vel, ullamcorper sit amet ligula.
+                                    Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit.
+                                    Mauris blandit aliquet elit,
+                                    eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
+                                </p>
+                            </div>
                         </div>
+
+                        <div class="modal-content">
+                            <div class="content">
+                                <span>Nutrition Facts</span>
+                                <p class="image is-1by2">
+                                    <img src="https://bulma.io/images/placeholders/480x480.png" alt="">
+                                </p>
+                            </div>
                         </div>
 
                         <footer class="modal-card-foot">
@@ -193,39 +207,17 @@
                             </button>
                         </footer>
 
-                        <div class="modal-content">
-                            <p class="image is-2by1">
-                                <img src="https://bulma.io/images/placeholders/640x320.png" alt="">
-                            </p>
-
-                            <div class="content">
-                                <span>Recipe Instructions:</span>
-
-                                <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
-                                Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.
-                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt.
-                                Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat,
-                                accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Nulla quis lorem ut libero malesuada feugiat.
-                                </p>
-
-                                <p>
-                                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit amet
-                                quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante ipsum primis in faucibus orci
-                                luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                                Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit,
-                                eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
-                                </p>
-                            </div>
-                        </div>
                     </section>
                 </div>
-              <!-- </div> -->
+            </div>
+            <!-- End of modal -->
+
+            <!-- End of three-quarters div -->
 
         </div>
 
-    
+    </div>
+
 
     <!-- End of main -->
 
