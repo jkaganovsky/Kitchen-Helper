@@ -26,10 +26,6 @@
 
 // getNutrition();
 
-var recipeTiles = $(".recipe-tile")
-
-function removeClass() {
-    recipeTiles.removeClass("hide")
-}
-
-recipeTiles.on("click", "search-button", removeClass)
+$("#search-button").click(function () {
+    var recipeTile = $(".recipe-tile").removeClass("is-hidden");
+});
