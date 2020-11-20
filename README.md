@@ -28,3 +28,7 @@ The following image demonstrates the application functionality:
 
 ## Screenshot
 ![image](https://user-images.githubusercontent.com/70370805/99848215-77ddc280-2b1d-11eb-82e6-634b28a64e61.png)
+
+## Technology Used
+Framework - Bulma, CSS
+API's - Spoonicalur & Nutritionix
