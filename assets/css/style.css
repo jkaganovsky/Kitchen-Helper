@@ -23,3 +23,7 @@
     height: auto;
     opacity: 0.3;
 }
+
+.hero.is-medium h1 {
+    font-size: 100px;
+}
