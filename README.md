@@ -25,3 +25,6 @@ THEN I can delete or add my ingredients list
 The following image demonstrates the application functionality:
 
 ![Demo](./assets/kitchen-helper-demo.png)
+
+## Screenshot
+![image](https://user-images.githubusercontent.com/70370805/99848215-77ddc280-2b1d-11eb-82e6-634b28a64e61.png)
