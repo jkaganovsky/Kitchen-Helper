@@ -26,4 +26,10 @@
 
 // getNutrition();
 
-var ileRows = $()
+var recipeTiles = $(".recipe-tile")
+
+function removeClass() {
+    recipeTiles.removeClass("hide")
+}
+
+recipeTiles.on("click", "search-button", removeClass)
