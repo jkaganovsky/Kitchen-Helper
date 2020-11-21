@@ -58,17 +58,17 @@ $("#find-recipe-btn").click(function () {
 });
 
 // Pulling response data into recipe-tiles
-function renderRecipeInformation() {
+function renderRecipeTile() {
 
     // For loop to run through the 6 tiles
     for (var i = 0; i < something; i++) {
 
         // Pull recipe name into "recipe-name"
-        var recipeName = $("recipe-name")
+        var recipeName = $(".recipe-name")
         recipeName.textContent = recipeResponse
 
         // Pull image into
-        var recipeImage = $("recipe-image")
+        var recipeImage = $(".recipe-image")
         recipeImage.attr("src", "url")
     }
 }
