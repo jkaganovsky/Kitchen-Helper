@@ -53,7 +53,7 @@ function getNutrition(ingredient1, ingredient2, ingredient3) {
 
 
 // Click event for revealing the tiles from hidden
-$("#search-button").click(function () {
+$("#find-recipe-btn").click(function () {
     var recipeTile = $(".recipe-tile").removeClass("is-hidden");
 });
 
@@ -80,6 +80,9 @@ $(".recipe-tile").click(function (event) {
 
     var modalBackground = $(".modal-background").removeClass("is-hidden");
     var modalCard = $(".modal-card").removeClass("is-hidden");
+
+    // var recipeModal = $("#recipeModal").removeClass("is-hidden");
+
 
     // $("event.target").
 });
