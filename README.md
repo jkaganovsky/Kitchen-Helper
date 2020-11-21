@@ -27,16 +27,11 @@ WHEN I need to change my search options
 THEN I can delete or add my ingredients list
 ```
 
-## Images
-The following image demonstrates the application functionality:
-
-![Demo](./assets/kitchen-helper-demo.png)
-
 [Presentation](https://docs.google.com/presentation/d/1nmq56PiGwKt2SuozjNwTLpOp4NQwZJfz5SLeUC-gfEA/edit#slide=id.g29f43f0a72_0_10)
 
 
-## Screenshot
-![image](https://user-images.githubusercontent.com/70370805/99848215-77ddc280-2b1d-11eb-82e6-634b28a64e61.png)
+## Preview
+![image](https://user-images.githubusercontent.com/70370805/99882685-6a304780-2bc6-11eb-8784-ae3f13ad5344.png))
 
 ## Technology Used
 Framework
