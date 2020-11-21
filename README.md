@@ -40,15 +40,13 @@ The following image demonstrates the application functionality:
 
 ## Technology Used
 Framework
-```
-Bulma - (https://bulma.io/)
-CSS (style.css)
-```
+1. Bulma - https://bulma.io/
+1. CSS - .assets/css/style.css
+1. JQuery - .assets/js/script.js
+
 API's
-```
-Spoonacalur (https://spoonacular.com/food-api/docs)
-Edemam (https://developer.edamam.com/edamam-nutrition-api)
-```
+1. Spoonacalur - https://spoonacular.com/food-api/docs
+1. Edemam - https://developer.edamam.com/edamam-nutrition-api
 
 ## Collaborators/Credits
 1. Alejandro Brand
