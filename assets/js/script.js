@@ -66,4 +66,23 @@ function renderRecipeInformation() {
     }
 }
 
+// Click event for the recipe tile to display the modal
+$(".recipe-tile").click(function (event) {
 
+    event.preventDefault();
+
+    var modalBackground = $(".modal-background").removeClass("is-hidden");
+    var modalCard = $(".modal-card").removeClass("is-hidden");
+
+    // $("event.target").
+});
+
+$("#close-button").click(function (event) {
+
+    event.preventDefault();
+
+    var modalBackground = $(".modal-background").addClass("is-hidden");
+    var modalCard = $(".modal-card").addClass("is-hidden");
+
+    // $("event.target").
+});
