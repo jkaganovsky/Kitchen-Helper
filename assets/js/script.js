@@ -1,6 +1,6 @@
-$("#find-recipe-btn").on("click",getRecipesbyIngredients);
+$("#find-recipe-btn").on("click", getRecipesbyIngredients);
 
-function getRecipesbyIngredients(event){
+function getRecipesbyIngredients(event) {
     var ingredient1 = $("#ingredient_1").val();
     console.log(ingredient1);
     var ingredient2 = $("#ingredient_2").val();
@@ -8,31 +8,25 @@ function getRecipesbyIngredients(event){
     var ingredient3 = $("#ingredient_3").val();
     console.log(ingredient3);
     var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredient1 + ",+" + ingredient2 + ",+" + ingredient3 + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
-    // var testURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=pasta,+sausage,+sauce&number=6&apiKey=71f2f23377744d319243a4c76fa7c648"
     event.preventDefault();
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
         console.log(response);
         var recipeId = response[0].id;
         console.log(recipeId);
         console.log(response[0].image);
 
-        for (i=0;i<response.length;i++){
-            $("#tile"+ i).text(response[i].title);
-            $("#img"+ i).attr("src",response[i].image);
+        for (i = 0; i < response.length; i++) {
+            $("#tile" + i).text(response[i].title);
+            $("#img" + i).attr("src", response[i].image);
         }
-        
-        /* for (i=0;i<response.length;i++){
-            console.log(i);
-            $(".recipe-name").data("tile" + i).text(response[i].title);
-            $(".recipe-image").attr("src",response[i].image);
-        } */
-        // getNutrition(ingredient1,ingredient2,ingredient3)
+
+        getNutrition(ingredient1, ingredient2, ingredient3)
         getRecipeInstructions(recipeId);
     });
-    
+
 }
 
 function getRecipeInstructions(recipeId) {
@@ -55,45 +49,26 @@ function getNutrition(ingredient1, ingredient2, ingredient3) {
 
     }).then(function (response) {
         console.log(response);
+        $("#calories").text("Calories: " + response.totalNutrientsKCal.ENERC_KCAL.quantity + "kcal");
+        $("#carbs").text("Carbohydrates: " + response.totalNutrientsKCal.CHOCDF_KCAL.quantity + "g");
+        $("#fat").text("Fat: " + response.totalNutrientsKCal.FAT_KCAL.quantity + "g");
+        $("#protein").text("Protein: " + response.totalNutrientsKCal.PROCNT_KCAL.quantity + "g");
     });
 };
-
-// getNutrition();
-
 
 // Click event for revealing the tiles from hidden
 $("#find-recipe-btn").click(function () {
     var recipeTile = $(".recipe-tile").removeClass("is-hidden");
 });
 
-// Pulling response data into recipe-tiles
-function renderRecipeTile() {
-
-    // For loop to run through the 6 tiles
-    for (var i = 0; i < something; i++) {
-
-        // Pull recipe name into "recipe-name"
-        var recipeName = $(".recipe-name")
-        recipeName.textContent = recipeResponse
-
-        // Pull image into
-        var recipeImage = $(".recipe-image")
-        recipeImage.attr("src", "url")
-    }
-}
 
 // Click event for the recipe tile to display the modal
 $(".recipe-tile").click(function (event) {
 
     event.preventDefault();
 
-    // var modalBackground = $(".modal-background").removeClass("is-hidden");
-    // var modalCard = $(".modal-card").removeClass("is-hidden");
-
     var recipeModal = $(".modal").removeClass("is-hidden");
 
-
-    // $("event.target").
 });
 
 $("#close-button").click(function (event) {
@@ -103,5 +78,4 @@ $("#close-button").click(function (event) {
     var modalBackground = $(".modal-background").addClass("is-hidden");
     var modalCard = $(".modal-card").addClass("is-hidden");
 
-    // $("event.target").
 });
