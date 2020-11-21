@@ -1,10 +1,5 @@
 # Kitchen-Helper
 
-## Links
-
-1. Repository - https://github.com/jkaganovsky/Kitchen-Helper
-1. Deployed Site - https://jkaganovsky.github.io/Kitchen-Helper/
-
 ## User Story
 
 ```
@@ -42,6 +37,10 @@ Framework
 API's
 1. Spoonacalur - https://spoonacular.com/food-api/docs
 1. Edemam - https://developer.edamam.com/edamam-nutrition-api
+
+## Links
+1. Repository - https://github.com/jkaganovsky/Kitchen-Helper
+1. Deployed Site - https://jkaganovsky.github.io/Kitchen-Helper/
 
 ## Collaborators/Credits
 1. Alejandro Brand
