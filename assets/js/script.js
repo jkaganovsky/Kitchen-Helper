@@ -78,10 +78,10 @@ $(".recipe-tile").click(function (event) {
 
     event.preventDefault();
 
-    var modalBackground = $(".modal-background").removeClass("is-hidden");
-    var modalCard = $(".modal-card").removeClass("is-hidden");
+    // var modalBackground = $(".modal-background").removeClass("is-hidden");
+    // var modalCard = $(".modal-card").removeClass("is-hidden");
 
-    // var recipeModal = $("#recipeModal").removeClass("is-hidden");
+    var recipeModal = $(".modal").removeClass("is-hidden");
 
 
     // $("event.target").
