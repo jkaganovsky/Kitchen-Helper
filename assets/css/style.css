@@ -1,6 +1,7 @@
 /* .hero.is-medium {
     background-image: url("https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8xOTY0OTg2MC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYxMjQxODUzNn0.zoog319egfzmGavLylSFGt2FDxqJV8lZOa5uOH4XFLY/img.jpg?width=1060&coordinates=0%2C24%2C0%2C25&height=555");
 <<<<<<< HEAD
+<<<<<<< HEAD
     opacity: 55%;
 }
 
@@ -28,6 +29,8 @@ h2.subtitle-is-2    {
 h1.title.is-1   {
     font-weight: bold;
 =======
+=======
+>>>>>>> Jailanie-frontend
     opacity: 35%;
 } */
 
@@ -54,5 +57,36 @@ h1.title.is-1   {
 
 .hero.is-medium h1 {
     font-size: 100px;
+<<<<<<< HEAD
 >>>>>>> 1c3840bf3a2623734f249950b98ddacc91607e63
+=======
+=======
+    opacity: 55%;
+}
+
+p {
+    text-align: center;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+h3.title-is-3   {
+    font-size: 70%;
+    color: black;
+}
+
+div.hero-body {
+    font-size: 300%;
+    font-weight: bold;
+}
+
+h2.subtitle-is-2    {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+h1.title.is-1   {
+    font-weight: bold;
+>>>>>>> 8350b7b8687bff978d9de25a302d09e450196781
+>>>>>>> Jailanie-frontend
 }
