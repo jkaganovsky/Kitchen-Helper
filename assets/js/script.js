@@ -1,5 +1,4 @@
 $("#find-recipe-btn").on("click", getRecipesbyIngredients);
-$("#find-recipe-btn").on("click", getRecipesbyIngredients);
 function getRecipesbyIngredients(event) {
     // var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredient1 + ",+" + ingredient2 + ",+" + ingredient3+ "&number=6?&apiKey=b2d13b9f8a22412e84d84453f24eac78";
     var testURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=6&apiKey=71f2f23377744d319243a4c76fa7c648"
