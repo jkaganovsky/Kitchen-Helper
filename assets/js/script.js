@@ -1,24 +1,26 @@
-$("#find-recipe-btn").on("click", getRecipesbyIngredients);
-function getRecipesbyIngredients(event) {
-    // var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredient1 + ",+" + ingredient2 + ",+" + ingredient3+ "&number=6?&apiKey=b2d13b9f8a22412e84d84453f24eac78";
-    var testURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=6&apiKey=71f2f23377744d319243a4c76fa7c648"
+$("#find-recipe-btn").on("click",getRecipesbyIngredients);
+
+function getRecipesbyIngredients(event){
+    var ingredient1 = $("#ingredient_1").val();
+    console.log(ingredient1);
+    var ingredient2 = $("#ingredient_2").val();
+    console.log(ingredient2);
+    var ingredient3 = $("#ingredient_3").val();
+    console.log(ingredient3);
+    var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredient1 + ",+" + ingredient2 + ",+" + ingredient3 + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
+    // var testURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=pasta,+sausage,+sauce&number=6&apiKey=71f2f23377744d319243a4c76fa7c648"
     event.preventDefault();
     $.ajax({
-        url: testURL,
+        url: queryURL,
         method: "GET"
-    }).then(function (response) {
+    }).then(function(response){
         console.log(response);
-        var ingredient1 = $("#ingredient_1").val();
-        console.log(ingredient1);
-        var ingredient2 = $("#ingredient_2").val();
-        console.log(ingredient2);
-        var ingredient3 = $("#ingredient_3").val();
-        console.log(ingredient3);
         var recipeId = response[0].id;
         console.log(recipeId);
         // getNutrition(ingredient1,ingredient2,ingredient3)
         getRecipeInstructions(recipeId);
     });
+    
 }
 
 function getRecipeInstructions(recipeId) {
