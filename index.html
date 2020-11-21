@@ -15,10 +15,10 @@
     <section class="hero is-medium">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title is-size-1 has-text-weight-bold">
+                <h1 class="title is-1">
                     Kitchen Helper
                 </h1>
-                <h2 class="subtitle">
+                <h2 class="subtitle-is-2">
                     All your food. One place.
                 </h2>
             </div>
@@ -28,9 +28,9 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h2 class="subtitle">
-                    Enter the ingredients left in your house on the left, see what you can make on the right
-                </h2>
+                <h3 class="title-is-3">
+                    Enter your ingredients on the left, see what you can make on the right
+               </h3>
             </div>
         </div>
     </section>
@@ -43,10 +43,76 @@
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
                     <article class="tile is-child box">
-                        <p>Add your ingredients here</p>
-                        <div class="control">
-                            <input type="search" placeholder="Text input..." />
-                        </div>
+                         <p>What's in your Pantry?</p>
+                         <br>
+                            <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-norma is-rounded" id = "ingredient_1"type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                            <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-normal is-rounded" id = "ingredient_2"type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                            <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-normal is-rounded" id = "ingredient_3"type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                            <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-normal is-rounded" type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                             <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-normal is-rounded" type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                             <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-normal is-rounded" type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                             <div class="field">
+                              <div class="control">
+                                <input class="input is-primary is-normal is-rounded" type="search" placeholder="Enter ingredients here" style="font-style:italic">
+                              </div>
+                            </div>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                        Vegan
+                                </label> 
+                                   <label class="checkbox">
+                                     <input type="checkbox">
+                                        Vegetarian
+                                </label> 
+                               <label class="checkbox">
+                                   <input type="checkbox">
+                                    Pescatarian
+                               </label> 
+                               <label class="checkbox">
+                                  <input type="checkbox">
+                                     Keto
+                               </label> 
+
+                                  <br>       
+                                  
+                                  <br>
+
+                               <div class="field is-grouped">
+                                   <p class="control">
+                                    <button class="button is-link" id = "find-recipe-btn">
+                                        Find Recipe
+                                    </button>
+                                   </p>
+                                   <p class="control">
+                                    <button class="button">
+                                        Cancel
+                                    </button>
+                                   </p>
+                                </div> 
                     </article>
                 </div>
             </div>
@@ -138,102 +204,78 @@
 
 
             <!-- Start of modal -->
+            <div class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Recipe Name</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        <!-- Content ... -->
+                        <div class="modal-content">
+                            <p class="image is-2by1">
+                                <img src="https://bulma.io/images/placeholders/640x320.png" alt="">
+                            </p>
 
-            <section class="modal-card-body is-hidden">
-                <!-- Content ... -->
-                <div class="modal-content">
-                    <p class="image is-2by1">
-                        <img src="https://bulma.io/images/placeholders/640x320.png" alt="">
-                    </p>
+                            <div class="content">
+                                <span>Recipe Instructions:</span>
 
-                    <div class="content">
-                        <span>Recipe Instructions:</span>
+                                <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                                    Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.
+                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor
+                                    accumsan tincidunt.
+                                    Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum
+                                    porta. Curabitur arcu erat,
+                                    accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit.
+                                    Nulla quis lorem ut libero malesuada feugiat.
+                                </p>
 
-                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
-                            Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.
-                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor
-                            accumsan tincidunt.
-                            Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum
-                            porta. Curabitur arcu erat,
-                            accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                            Nulla quis lorem ut libero malesuada feugiat.
-                        </p>
+                                <p>
+                                    Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit
+                                    amet
+                                    quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus.
+                                    Lorem ipsum dolor sit amet,
+                                    consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante
+                                    ipsum primis in faucibus orci
+                                    luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
+                                    vel, ullamcorper sit amet ligula.
+                                    Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit.
+                                    Mauris blandit aliquet elit,
+                                    eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
+                                </p>
+                            </div>
+                        </div>
 
+                        <div class="modal-content">
+                            <div class="content">
+                                <span>Nutrition Facts</span>
+                                <p class="image is-1by2">
+                                    <img src="https://bulma.io/images/placeholders/480x480.png" alt="">
+                                </p>
+                            </div>
+                        </div>
 
+                        <footer class="modal-card-foot">
+                            <button class="button is-primary">
+                                <span class="icon is-large">
+                                    <i class="fas fa-angle-left fas fa-2x"></i>
+                                </span>
+                                <h4>Prev</h4>
+                            </button>
 
+                            <button class="button is-primary">
+                                <h4>Next</h4>
+                                <span class="icon is-large">
+                                    <i class="fas fa-angle-right fas fa-2x"></i>
+                                </span>
+                            </button>
+                        </footer>
 
-
-
-                        <p>
-                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit
-                            amet
-                            quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus.
-                            Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante
-                            ipsum primis in faucibus orci
-                            luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
-                            vel, ullamcorper sit amet ligula.
-                            Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit.
-                            Mauris blandit aliquet elit,
-                            eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
-                        </p>
-                    </div>
+                    </section>
                 </div>
-
-                <footer class="modal-card-foot">
-                    <button class="button is-primary">
-                        <span class="icon is-large">
-                            <i class="fas fa-angle-left fas fa-2x"></i>
-                        </span>
-                        <h4>Prev</h4>
-                    </button>
-
-                    <button class="button is-primary">
-                        <h4>Next</h4>
-                        <span class="icon is-large">
-                            <i class="fas fa-angle-right fas fa-2x"></i>
-                        </span>
-                    </button>
-                </footer>
-
-                <div class="modal-content">
-                    <p class="image is-2by1">
-                        <img src="https://bulma.io/images/placeholders/640x320.png" alt="">
-                    </p>
-
-                    <div class="content">
-                        <span>Recipe Instructions:</span>
-
-                        <p>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
-                            Proin eget tortor risus. Vivamus suscipit tortor eget felis porttitor volutpat.
-                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor
-                            accumsan tincidunt.
-                            Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum
-                            porta. Curabitur arcu erat,
-                            accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit.
-                            Nulla quis lorem ut libero malesuada feugiat.
-                        </p>
-
-                        <p>
-                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ac diam sit
-                            amet
-                            quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus.
-                            Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Donec sollicitudin molestie malesuada. Vestibulum ante
-                            ipsum primis in faucibus orci
-                            luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam
-                            vel, ullamcorper sit amet ligula.
-                            Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id dui posuere blandit.
-                            Mauris blandit aliquet elit,
-                            eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt.
-                        </p>
-                    </div>
-                </div>
-
-            </section>
-
+            </div>
             <!-- End of modal -->
 
             <!-- End of three-quarters div -->
@@ -256,13 +298,13 @@
     </footer>
 
     <!-- script links -->
-    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- <script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js”></script> -->
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js”></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type=“text/javascript” src=“https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js”></script>
-<script src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
+   
 </body>
 
 </html>
