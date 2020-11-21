@@ -32,6 +32,6 @@ p {
     font-size: 120%;
 }
 
-/* cursor
-:hover
-pointer */
+.recipe-tile:hover {
+    cursor:pointer;
+}
