@@ -23,11 +23,11 @@ function getRecipesbyIngredients(event){
     
 }
 
-getRecipeInstructions();
+
 
 
 function getRecipeInstructions(recipeId){
-    var queryURL = "https://api.spoonacular.com/recipes/" + recipeId + "/analyzedInstructions?apiKey=71f2f23377744d319243a4c76fa7c648";
+    var queryURL = "https://api.spoonacular.com/recipes/" + recipeId + "/information?apiKey=71f2f23377744d319243a4c76fa7c648";
 
         $.ajax({
             url: queryURL,
