@@ -1,12 +1,16 @@
+renderStorage();
+
+var ingredientItemsList = [];
+
 $("#find-recipe-btn").on("click", getRecipesbyIngredients);
 
 function getRecipesbyIngredients(event) {
     var ingredient1 = $("#ingredient_1").val();
-    console.log(ingredient1);
+    // console.log(ingredient1);
     var ingredient2 = $("#ingredient_2").val();
-    console.log(ingredient2);
+    // console.log(ingredient2);
     var ingredient3 = $("#ingredient_3").val();
-    console.log(ingredient3);
+    // console.log(ingredient3);
     var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredient1 + ",+" + ingredient2 + ",+" + ingredient3 + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
     event.preventDefault();
     $.ajax({
@@ -78,3 +82,41 @@ $("#close-button").click(function (event) {
     var recipeModal = $(".modal").addClass("is-hidden");
 
 });
+
+$("#find-recipe-btn").click(function (event) {
+
+    event.preventDefault();
+
+    var ingredient1 = $("#ingredient_1").val();
+    var ingredient2 = $("#ingredient_2").val();
+    var ingredient3 = $("#ingredient_3").val();
+
+    var ingredients = ingredient1 + ", " + ingredient2 + ", " + ingredient3
+
+    ingredientItemsList.push(ingredients);
+
+    localStorage.setItem("ingredients", JSON.stringify(ingredientItemsList));
+
+    $("#ingr-save").prepend("<li>" + ingredient1 + ", " + ingredient2 + ", " + ingredient3 + "</li>");
+
+})
+
+function renderStorage() {
+
+    var savedIngredients = JSON.parse(localStorage.getItem("ingredients"));
+
+    if (savedIngredients !== null) {
+        ingredientItemsList = savedIngredients;
+
+        for (var i = 0; i < ingredientItemsList.length; i++) {
+
+            var ingredients = ingredientItemsList[i];
+
+            $("#ingr-save").prepend("<li>" + ingredients + "</li>");
+        }
+    }
+}
+
+// $("#ingr-save").click(function () {
+//     getRecipesbyIngredients();
+// })
