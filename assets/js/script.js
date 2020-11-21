@@ -23,7 +23,7 @@ function getRecipesbyIngredients(event) {
             $("#img" + i).attr("src", response[i].image);
         }
 
-        getNutrition(ingredient1, ingredient2, ingredient3)
+        // getNutrition(ingredient1, ingredient2, ingredient3)
         getRecipeInstructions(recipeId);
     });
 
@@ -75,7 +75,6 @@ $("#close-button").click(function (event) {
 
     event.preventDefault();
 
-    var modalBackground = $(".modal-background").addClass("is-hidden");
-    var modalCard = $(".modal-card").addClass("is-hidden");
+    var recipeModal = $(".modal").addClass("is-hidden");
 
 });
