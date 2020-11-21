@@ -15,7 +15,9 @@ function getRecipesbyIngredients(){
     console.log(recipeId);
     getNutrition(ingredient1,ingredient2,ingredient3)
 }
-// getRecipesbyIngredients();
+
+getRecipeInstructions();
+
 
 function getRecipeInstructions(recipeId){
 
