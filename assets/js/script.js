@@ -7,7 +7,7 @@ function getRecipesbyIngredients(event){
     $.ajax({
         url: testURL,
         method: "GET"
-    }).then(function(response){
+    }).then(function (response) {
         console.log(response);
         var ingredient1 = $("#ingredient_1").val();
         console.log(ingredient1);
