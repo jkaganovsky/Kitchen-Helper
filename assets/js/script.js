@@ -51,7 +51,19 @@ $("#search-button").click(function () {
 });
 
 // Pulling response data into recipe-tiles
+function renderRecipeInformation() {
 
-// Pull recipe name into "recipe-name"
+    // For loop to run through the 6 tiles
+    for (var i = 0; i < something; i++) {
 
-// Pull image into 
+        // Pull recipe name into "recipe-name"
+        var recipeName = $("recipe-name")
+        recipeName.textContent = recipeResponse
+
+        // Pull image into
+        var recipeImage = $("recipe-image")
+        recipeImage.attr("src", "url")
+    }
+}
+
+
