@@ -17,6 +17,18 @@ function getRecipesbyIngredients(event){
         console.log(response);
         var recipeId = response[0].id;
         console.log(recipeId);
+        console.log(response[0].image);
+
+        for (i=0;i<response.length;i++){
+            $("#tile"+ i).text(response[i].title);
+            $("#img"+ i).attr("src",response[i].image);
+        }
+        
+        /* for (i=0;i<response.length;i++){
+            console.log(i);
+            $(".recipe-name").data("tile" + i).text(response[i].title);
+            $(".recipe-image").attr("src",response[i].image);
+        } */
         // getNutrition(ingredient1,ingredient2,ingredient3)
         getRecipeInstructions(recipeId);
     });
@@ -30,6 +42,7 @@ function getRecipeInstructions(recipeId) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
+
     });
 }
 
