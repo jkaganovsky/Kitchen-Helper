@@ -25,13 +25,24 @@ function getRecipesbyIngredients(event) {
         for (i = 0; i < response.length; i++) {
             $("#tile" + i).text(response[i].title);
             $("#img" + i).attr("src", response[i].image);
+            $("#result"+ i).attr("data-recipeid",response[i].id);
         }
-
-        // getNutrition(ingredient1, ingredient2, ingredient3)
-        getRecipeInstructions(recipeId);
+               
     });
 
 }
+
+$(".test").click(function(event){
+    event.preventDefault()
+    // event.target.data("")
+    console.log(event.target);
+    console.log($(this)[0]);
+    var selectedRecipe = $(this).data("recipeid");
+    console.log(selectedRecipe);
+    // console.log($(".test").data("recipeid"));
+     var recipeModal = $(".modal").removeClass("is-hidden");
+    getRecipeInstructions(selectedRecipe);
+})
 
 function getRecipeInstructions(recipeId) {
     var queryURL = "https://api.spoonacular.com/recipes/" + recipeId + "/analyzedInstructions?apiKey=71f2f23377744d319243a4c76fa7c648";
@@ -39,10 +50,17 @@ function getRecipeInstructions(recipeId) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
-
+        console.log(response[0]);
+        var stepsInstructions = response[0].steps;
+        console.log(stepsInstructions);
+        /* for (i=0;i<stepsInstructions.length;i++){
+             var step = $("<p>").text(stepsInstructions[i].step);
+             console.log($(step));
+        } */
     });
 }
+
+  
 
 function getNutrition(ingredient1, ingredient2, ingredient3) {
 
