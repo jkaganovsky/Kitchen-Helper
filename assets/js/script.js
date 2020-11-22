@@ -2,17 +2,13 @@ renderStorage();
 
 var ingredientItemsList = [];
 
-$("#find-recipe-btn").on("click", getRecipesbyIngredients);
+// Calls the recipes from spoonacular
+function getRecipesbyIngredients(ingredients) {
+    console.log(ingredients);
 
-function getRecipesbyIngredients(event) {
-    var ingredient1 = $("#ingredient_1").val();
-    // console.log(ingredient1);
-    var ingredient2 = $("#ingredient_2").val();
-    // console.log(ingredient2);
-    var ingredient3 = $("#ingredient_3").val();
-    // console.log(ingredient3);
-    var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" + ingredient1 + ",+" + ingredient2 + ",+" + ingredient3 + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
-    event.preventDefault();
+    var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
+                    ingredients + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -27,7 +23,7 @@ function getRecipesbyIngredients(event) {
             $("#img" + i).attr("src", response[i].image);
             $("#result"+ i).attr("data-recipeid",response[i].id);
         }
-               
+
     });
 
 }
@@ -60,8 +56,6 @@ function getRecipeInstructions(recipeId) {
     });
 }
 
-  
-
 function getNutrition(ingredient1, ingredient2, ingredient3) {
 
     var secondQueryURL = "https://api.edamam.com/api/nutrition-data?app_id=17b937a5&app_key=02f27b66f18bc4bf93156f026eabe8f8&ingr=" + num1 + "%20" + "medium" + ingredient1 + "%2C" + num2 + "%20" + "medium" + "%20" + ingredient2 + "%2C" + num3 + "%20" + "medium" + "%20" + ingredient3
@@ -93,6 +87,7 @@ $(".recipe-tile").click(function (event) {
 
 });
 
+// Click even to close the modal
 $("#close-button").click(function (event) {
 
     event.preventDefault();
@@ -101,15 +96,18 @@ $("#close-button").click(function (event) {
 
 });
 
+// Showing ingredients list into an array onto our local storage.
 $("#find-recipe-btn").click(function (event) {
 
     event.preventDefault();
 
-    var ingredient1 = $("#ingredient_1").val();
-    var ingredient2 = $("#ingredient_2").val();
-    var ingredient3 = $("#ingredient_3").val();
+    var ingredient1 = $("#ingredient_1").val().toUpperCase();
+    var ingredient2 = $("#ingredient_2").val().toUpperCase();
+    var ingredient3 = $("#ingredient_3").val().toUpperCase();
 
     var ingredients = ingredient1 + ", " + ingredient2 + ", " + ingredient3
+
+    getRecipesbyIngredients(ingredients);
 
     ingredientItemsList.push(ingredients);
 
@@ -118,6 +116,7 @@ $("#find-recipe-btn").click(function (event) {
     $("#ingr-save").prepend("<li>" + ingredient1 + ", " + ingredient2 + ", " + ingredient3 + "</li>");
 
 })
+
 
 function renderStorage() {
 
@@ -135,6 +134,14 @@ function renderStorage() {
     }
 }
 
-// $("#ingr-save").click(function () {
-//     getRecipesbyIngredients();
-// })
+// Shows recipes when history of saved ingredients are clicked
+$("#ingr-save").click(function (event) {
+    console.log(event);
+
+    var ingredients = event.target.innerHTML;
+    console.log(ingredients);
+
+    $(".recipe-tile").removeClass("is-hidden");
+
+    getRecipesbyIngredients(ingredients);
+});
