@@ -2,9 +2,9 @@ renderStorage();
 
 var ingredientItemsList = [];
 
-// Calls the recipes from spoonacular
+// Calls recipes from spoonacular API by user ingredient input
 function getRecipesbyIngredients(ingredients) {
-    console.log(ingredients);
+    // console.log(ingredients);
 
     var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
                     ingredients + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
@@ -22,37 +22,72 @@ function getRecipesbyIngredients(ingredients) {
             $("#tile" + i).text(response[i].title);
             $("#img" + i).attr("src", response[i].image);
             $("#result"+ i).attr("data-recipeid",response[i].id);
-        }
+        } // End of for loop
 
-    });
+    }); // End of AJAX ingredients query
 
 }
 
-$(".test").click(function(event){
+// Acquire recipe image, recipe name, and recipeid from clicked recipe card.
+$(".recipe").click(function(event){
     event.preventDefault()
-    // event.target.data("")
-    console.log(event.target);
-    console.log($(this)[0]);
+    // console.log(event);
+    // console.log($(this));
+    // console.log($(this)[0]); //has image inside recipe-image
+    // console.log($(this).find(".recipe-image img")); //found <figure>
+    // console.log($(this).find(".recipe-image img").attr('src')); //found <figure>
+    // console.log($(this).find("figure")[0].innerHTML.trim());
+
     var selectedRecipe = $(this).data("recipeid");
-    console.log(selectedRecipe);
+    // console.log(selectedRecipe);
+
+    // Find image in "this" under "recipe-image" and get it's attribute.
+    var image_src = $(".recipe-image img").attr("src");
+    // console.log("Image_src: ", image_src);
+
+    // Find recipe-name in "this" and get it's attribute.
+    // console.log("Recipe Name: " + $(this)[0].innerText);
+    var recipeName = $(this)[0].innerText;
+
     // console.log($(".test").data("recipeid"));
-     var recipeModal = $(".modal").removeClass("is-hidden");
-    getRecipeInstructions(selectedRecipe);
+    $(".modal").removeClass("is-hidden");
+    getRecipeInstructions(selectedRecipe, image_src, recipeName);
+
+    // Add recipe-name to modal by updating it's innertext.
+    // console.log($(".modal-card-title")[0].innerText);
+    console.log(recipeName);
+    $(".modal-card-title").html("");
+    $(".modal-card-title")[0].append(recipeName);
+
+    // Add image to recipe modal by updating it's src attribute.
+    // console.log("#instructions[0]: ", $("#instructions"))
+    $("#instructions").attr("src", image_src);
+
 })
 
-function getRecipeInstructions(recipeId) {
+// Acquire recipe instructions from spoonacular API to show on the modal
+function getRecipeInstructions(recipeId, image_src, recipeName) {
+
     var queryURL = "https://api.spoonacular.com/recipes/" + recipeId + "/analyzedInstructions?apiKey=71f2f23377744d319243a4c76fa7c648";
+    // console.log(recipeId);
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response[0]);
+        // console.log(response);
+        // console.log(response[0].steps[0].number);
+        // console.log(response[0].steps[0].step);
+
+        // Add cooking instructions to the recipe modal.
         var stepsInstructions = response[0].steps;
-        console.log(stepsInstructions);
-        /* for (i=0;i<stepsInstructions.length;i++){
-             var step = $("<p>").text(stepsInstructions[i].step);
-             console.log($(step));
-        } */
+        $(".recipe-step").html("");
+        for (i=0; i<stepsInstructions.length; i++) {
+            $(".recipe-step").append("<p>" +
+            stepsInstructions[i].number + ". " +
+            stepsInstructions[i].step + "</p>");
+        } // End of AJAX call for recipeId
+
     });
 }
 
