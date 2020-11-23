@@ -31,23 +31,23 @@ function getRecipesbyIngredients(ingredients) {
 // Acquire recipe image, recipe name, and recipeid from clicked recipe card.
 $(".recipe").click(function(event){
     event.preventDefault()
-    // console.log(event);
-    // console.log($(this));
+    console.log(event);
+    console.log($(this));
     // console.log($(this)[0]); //has image inside recipe-image
     // console.log($(this).find(".recipe-image img")); //found <figure>
-    // console.log($(this).find(".recipe-image img").attr('src')); //found <figure>
+    console.log($(this).find(".recipe-image img").attr('src')); //found <figure>
     // console.log($(this).find("figure")[0].innerHTML.trim());
 
     var selectedRecipe = $(this).data("recipeid");
     // console.log(selectedRecipe);
 
-    // Find image in "this" under "recipe-image" and get it's attribute.
-    var image_src = $(".recipe-image img").attr("src");
-    // console.log("Image_src: ", image_src);
-
     // Find recipe-name in "this" and get it's attribute.
     // console.log("Recipe Name: " + $(this)[0].innerText);
     var recipeName = $(this)[0].innerText;
+
+    // Find image in "this" under "recipe-image" and get it's attribute.
+    var image_src = $(this).find(".recipe-image img").attr("src");
+    // console.log("Image_src: ", image_src);
 
     // console.log($(".test").data("recipeid"));
     $(".modal").removeClass("is-hidden");
@@ -91,6 +91,7 @@ function getRecipeInstructions(recipeId, image_src, recipeName) {
     });
 }
 
+// Calls nutritional values for the recipe from Edemam API
 function getNutrition(ingredient1, ingredient2, ingredient3) {
 
     var secondQueryURL = "https://api.edamam.com/api/nutrition-data?app_id=17b937a5&app_key=02f27b66f18bc4bf93156f026eabe8f8&ingr=" + num1 + "%20" + "medium" + ingredient1 + "%2C" + num2 + "%20" + "medium" + "%20" + ingredient2 + "%2C" + num3 + "%20" + "medium" + "%20" + ingredient3
