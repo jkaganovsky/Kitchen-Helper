@@ -35,7 +35,7 @@ $(".recipe").click(function(event){
     console.log($(this));
     // console.log($(this)[0]); //has image inside recipe-image
     // console.log($(this).find(".recipe-image img")); //found <figure>
-    console.log($(this).find(".recipe-image img").attr('src')); //found <figure>
+    // console.log($(this).find(".recipe-image img").attr('src'));
     // console.log($(this).find("figure")[0].innerHTML.trim());
 
     var selectedRecipe = $(this).data("recipeid");
@@ -75,17 +75,26 @@ function getRecipeInstructions(recipeId, image_src, recipeName) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        // console.log(response);
+        console.log(response);
         // console.log(response[0].steps[0].number);
         // console.log(response[0].steps[0].step);
+        console.log(response[0].steps[0].ingredients);
+
+        var currentIngredients = response[0].steps[0].ingredients;
+        $(".recipe-ingredients").html("");
+        for (var i=0; i<currentIngredients.length; i++) {
+            $(".recipe-ingredients").append("<li>" + currentIngredients[i].name + "</li>");
+        }
+
+        // $(".recipe-ingredients").val().toUpperCase();
 
         // Add cooking instructions to the recipe modal.
         var stepsInstructions = response[0].steps;
         $(".recipe-step").html("");
-        for (i=0; i<stepsInstructions.length; i++) {
+        for (j=0; j<stepsInstructions.length; j++) {
             $(".recipe-step").append("<p>" +
-            stepsInstructions[i].number + ". " +
-            stepsInstructions[i].step + "</p>");
+            stepsInstructions[j].number + ". " +
+            stepsInstructions[j].step + "</p>");
         } // End of AJAX call for recipeId
 
     });
