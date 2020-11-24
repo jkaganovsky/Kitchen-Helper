@@ -26,7 +26,8 @@ THEN I can delete or add my ingredients list
 
 
 ## Preview
-![image](https://user-images.githubusercontent.com/70370805/99882685-6a304780-2bc6-11eb-8784-ae3f13ad5344.png))
+![Untitled_ Nov 23, 2020 10_27 PM](https://user-images.githubusercontent.com/70370805/100068277-67f30680-2ddb-11eb-9a56-81c291ca07c2.gif)
+
 
 ## Technology Used
 Framework
