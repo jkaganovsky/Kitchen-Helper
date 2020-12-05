@@ -7,7 +7,7 @@ function getRecipesbyIngredients(ingredients) {
     // console.log(ingredients);
 
     var queryURL = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=" +
-                    ingredients + "&number=6&apiKey=71f2f23377744d319243a4c76fa7c648";
+                    ingredients + "&number=6&apiKey=3d8504ff72124b3790e1881e4619a59c";
 
     $.ajax({
         url: queryURL,
@@ -68,7 +68,7 @@ $(".recipe").click(function(event){
 // Acquire recipe instructions from spoonacular API to show on the modal
 function getRecipeInstructions(recipeId, image_src, recipeName) {
 
-    var queryURL = "https://api.spoonacular.com/recipes/" + recipeId + "/analyzedInstructions?apiKey=71f2f23377744d319243a4c76fa7c648";
+    var queryURL = "https://api.spoonacular.com/recipes/" + recipeId + "/analyzedInstructions?apiKey=3d8504ff72124b3790e1881e4619a59c";
     // console.log(recipeId);
 
     $.ajax({
